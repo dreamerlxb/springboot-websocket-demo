@@ -17,11 +17,11 @@ public class WsController {
 	//@SendTo("/topic/getResponse")
 	@MessageMapping("/welcome")
     public void say(@Header("user") String user, RequestMessage message) {
-        System.out.println(message.getName() + " ====== " + user);
+        System.out.println(message.getMsg() + " ====== " + user);
         
-        template.convertAndSendToUser("lxb", "/msg", message);
-        template.convertAndSend("/topic/getResponse", message);
-        template.convertAndSend("/user/lxb/msg", message);
+        template.convertAndSendToUser(user, "/msg", message);
+        //template.convertAndSend("/topic/getResponse", message);
+        //template.convertAndSend("/user/lxb/msg", message);
        // return new ResponseMessage("welcome," + message.getName() + " !");
     }
 }

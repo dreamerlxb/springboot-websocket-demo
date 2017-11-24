@@ -58,8 +58,8 @@
 	            		console.log('response -> ', response);
 	                showResponse(JSON.parse(response.body).responseMessage);
 	            }); */
-	            stompClient.subscribe('/user/ws2/msg', function (response) {
-	            		console.log('Chat Response From ws2-> ', response);
+	            stompClient.subscribe('/user/ws/msg', function (response) {
+	            		console.log('Chat Response From ws -> ', response);
 	            		showResponse(JSON.parse(response.body).msg);
 	            });
 	        });
@@ -74,7 +74,7 @@
 	    function sendMsg() {
 	        var msg = $('#msg').val();
 	        var body = JSON.stringify({'msg': msg});
-	        stompClient.send("/welcome", body, {"user": "ws"});
+	        stompClient.send("/welcome", body, {"user": "ws2"});
 	    }
 	    
 	    function showResponse(message) {

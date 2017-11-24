@@ -1,22 +1,23 @@
 package com.lxb.websocket.msg;
 
 public class RequestMessage {
-	private String name;
 	
-    public RequestMessage(String name) {
-		super();
-		this.name = name;
+	private String msg;
+
+	public String getMsg() {
+		return msg;
 	}
-    
-    public RequestMessage() {
-  		super();
-  	}
 
-	public String getName() {
-        return name;
-    }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 
-	public void setName(String name) {
-		this.name = name;
+	public RequestMessage(String msg) {
+		super();
+		this.msg = msg;
+	}
+	
+	public RequestMessage() {
+		super();
 	}
 }
